@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Change Password — Standalone Form</title>
+  <meta name="description" content=" password-change form with client-side validation." />
+  <link rel="stylesheet" href="./styles.css" />
+  <script defer src="./scripts/validate.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <h1 style="margin:0">Change Password - FORM</h1>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <h2>Change Password</h2>
+    <p class="help">Rules: minimum length <strong>9</strong>, <strong>≥ 2 uppercase</strong> letters, and <strong>≥ 1 special</strong> symbol (!@#$%^&*).</p>
+
+    <form id="pwdForm" novalidate aria-describedby="formStatus">
+      <label for="current">Current Password</label>
+      <input id="current" name="current" type="password" autocomplete="current-password" required aria-required="true"/>
+
+      <label for="new">New Password</label>
+      <input id="new" name="new" type="password" autocomplete="new-password" required aria-required="true"
+             pattern="^(?=.*[A-Z].*[A-Z])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{9,}$" />
+
+      <label for="confirm">Confirm Password</label>
+      <input id="confirm" name="confirm" type="password" autocomplete="new-password" required aria-required="true"/>
+
+      <div class="form-actions">
+        <button class="btn" type="submit">Change Password</button>
+        <button class="btn" type="button" id="changeAddress">Change Address</button>
+      </div>
+
+      <p id="formStatus" class="help" aria-live="polite"></p>
+    </form>
+  </main>
+
+  
+  
+</body>
+</html>
